@@ -36,16 +36,11 @@ for test in range(0,tests):
             colorCnt[check]+=1;
         #ADD up all keys.
         for color in colorCnt.keys():
-            #print(color)
             allColorModTotals += (colorCnt[str(color)] * int(color))%numOfNodes;
-        #print(node);
         guess = node-(allColorModTotals%numOfNodes);
-        #print(guess);
-        #print(g.node(node)," Guesses ",guess );
         if guess<0:
             guess = numOfNodes + guess;
         if guess == g.nodes[node]['color']:
-            #print("Correct Guess!");
             correct+=1
         else:
             incorrect+=1
